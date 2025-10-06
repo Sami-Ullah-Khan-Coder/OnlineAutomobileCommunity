@@ -1,0 +1,2281 @@
+<style>
+  /* font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+  :root {
+    --main-color: #d30d0d;
+    --text-color: #141622;
+    --primary-color: #8a79f0;
+    --primary-color-dark: #2e2a40;
+    --text-dark: #221e36;
+    --text-light: #767268;
+    --extra-light: #f1f2ff;
+    --white: #ffffff;
+    --max-width: 1200px;
+  }
+
+  .section__header {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 3.25rem;
+    text-align: center;
+  }
+
+  .section__description {
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1.7rem;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "playfair Display", serif;
+  }
+
+  html {
+    font-size: 65.5%;
+  }
+
+  img {
+    display: flex;
+    width: 100%;
+  }
+
+  /* top header */
+  .top-header .out-box {
+    width: 100%;
+    background: var(--main-color);
+  }
+
+  .top-header .out-box .inside-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #141622;
+    padding: 1rem 0;
+    clip-path: polygon(8% 0%, 92% 0%, 96% 100%, 5% 100%);
+  }
+
+  .out-box .inside-box .col-1 {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #fff;
+    margin-left: 13rem;
+  }
+
+  .inside-box .col-1 span {
+    font-size: 1.5rem;
+  }
+
+  .inside-box .col-1 span i {
+    color: var(--main-color);
+    padding-right: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .out-box .inside-box .col-2 {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-right: 13rem;
+  }
+
+  .out-box .inside-box .col-2 a,
+  .out-box .inside-box .col-2 span i {
+    color: #ffff;
+    font-size: 1.5rem;
+    transition: 0.4s;
+  }
+
+  .out-box .inside-box .col-2 a i {
+    padding-right: 0.5rem;
+  }
+
+  .out-box .inside-box .col-2 a:hover {
+    color: var(--main-color);
+  }
+
+  @media(max-width:1150px) {
+    .out-box .inside-box .col-1 {
+      margin-left: 6rem;
+    }
+
+    .out-box .inside-box .col-2 {
+      margin-right: 8rem;
+    }
+  }
+
+
+  /* header */
+  .header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 9.5%;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(190, 109, 190, 0.5), 0 0 10px rgba(190, 109, 190, 0.5);
+    z-index: 2;
+    transition: 0.4s ease;
+
+  }
+
+  .header .logo img {
+    margin-left: -8rem;
+    width: 180px;
+    height: 65px;
+  }
+
+  .header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  nav .navbar .navLink {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+  }
+
+  nav .navbar .navLink li a {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+    position: relative;
+
+  }
+
+  nav .other i {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+
+  .navbar .navLink li a:hover,
+  .navbar .navLink .other i:hover {
+    color: var(--main-color);
+  }
+
+  /* responce for navbar */
+  @media(max-width:900px) {
+    .top-header {
+      display: none;
+    }
+
+    nav .navbar .navLink {
+      position: absolute;
+      display: block;
+      top: 5.3rem;
+      width: 100%;
+      left: 0px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(190, 190, 190, 0.5);
+      padding-left: 30px;
+      display: none;
+      transition: 0.5s ease-in-out;
+    }
+
+    nav .navbar .navLink.active {
+      display: block;
+    }
+
+    nav .navbar li {
+      padding: 1rem 0;
+    }
+  }
+
+
+  /*------------------------------ home page start---------------------------------------- */
+  .home .slide {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16rem;
+  }
+
+  .home .slide.slide-one {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(255, 0, 0));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: cover;
+  }
+
+  .home .slide.slide-two {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(235, 235, 37));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: cover;
+  }
+
+  .home .slide.slide-three {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(43, 171, 235));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: cover;
+  }
+
+  .home .slide .col-1 {
+    flex: 1 1 20rem;
+  }
+
+  .home .slide .col-2 {
+    flex: 1 1 20rem;
+
+  }
+
+  .home .slide .col-2 img {
+    margin-right: 2rem;
+    width: 128%;
+    height: 37rem;
+  }
+
+  .home .slide .col-1 h4 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 3rem;
+  }
+
+  .home .slide .col-1 h1 {
+    color: #0a0303;
+    font-size: 5.2rem;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+  }
+
+  .home .slide .col-1 h1 span {
+    color: var(--main-color);
+  }
+
+  .home .slide .col-1 p {
+    color: #fff;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    padding-top: 2rem;
+  }
+
+  .home .slide .col-1 .button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1 rem;
+    padding-top: 4rem;
+  }
+
+  .home .slide .col-1 .button button {
+    padding: 1.8rem 2.8rem 1.8rem 2rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    background: var(--main-color);
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s ease;
+  }
+
+  .home .slide .col-1 .button button:hover {
+    background: var(--text-color);
+    color: #fff;
+  }
+
+  .home .slide .col-1 .button button.about {
+    background: var(--main-color);
+    color: #fff;
+
+  }
+
+  /* responce for home page 
+@media(max-width:1370px){
+    nav .navbar li{
+        padding: 2.5rem 0;
+    }
+    nav .navbar .navLink{
+        gap: 1rem;
+    }
+}*/
+
+  @media(max-width:890px) {
+
+    /*.home .slide{
+    height: auto;
+    padding: 5rem 10rem;
+    display: block;
+
+  } */
+    .home .slide .col-2 img {
+      width: 100%;
+      height: 35rem;
+      display: none;
+    }
+
+    /*.home .col-1{
+    width: 50%;
+    padding: 0px;
+    margin: 0%;
+
+  }*/
+  }
+
+  /* ------------market section--------- */
+
+
+
+
+
+
+  section {
+    padding: 2.5rem 16rem;
+    background: #fff;
+  }
+
+  .market {
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .market .col-3 {
+    flex: 1 1 20rem;
+    position: relative;
+
+  }
+
+  .market .col-3 .img.one {
+    width: 100%;
+    height: 45rem;
+
+  }
+
+  .market .col-4 {
+    flex: 1 1 20rem;
+  }
+
+  .market .col-4 h4 {
+    color: var(--main-color);
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-size: 500;
+    padding-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .market .col-4 h4 i {
+    padding-right: 0.5rem;
+
+  }
+
+  .market .col-4 h3 {
+    font-size: 4rem;
+    color: var(--text-color);
+    padding-bottom: 2rem;
+  }
+
+  .market .col-4 h3 span {
+    color: var(--main-color);
+  }
+
+  .market .col-4 p.text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding-bottom: 2rem;
+  }
+
+  .market .col-4 .p1 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .market .col-4 .p1 i {
+    padding-right: 0.5rem;
+    color: var(--main-color);
+    font-size: 1.6rem;
+  }
+
+  @media(max-width:900px) {
+    .market {
+      padding-top: 25rem;
+      flex-wrap: wrap;
+    }
+
+    .market .col-4 {
+      margin-left: 11rem;
+    }
+  }
+
+  @media(max-width:500px) {
+    .market {
+      padding: -7rem;
+      flex-wrap: wrap;
+    }
+
+    section {
+      padding: 2.5rem 10rem;
+    }
+
+    .market .col-4 {
+      margin-left: 2rem;
+    }
+  }
+
+  /* list page start */
+  .section__container {
+    margin: auto;
+    padding: 5rem 1rem;
+  }
+
+  .section__header {
+    font-size: 3rem;
+    font-weight: 700;
+
+  }
+
+  .experience__container {
+    margin-left: 4rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .experience__container form {
+    margin-left: 12rem;
+  }
+
+  .experience__container img {
+    height: 250px;
+  }
+
+  .experience__container p {
+    margin-left: 12rem;
+    font-size: 1.6rem;
+    color: #0a0b0f;
+    padding-top: 2rem;
+  }
+
+  .service {
+    background-color: var(--extra-light);
+  }
+
+  .service__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 4rem 2rem;
+  }
+
+  .service__card img {
+    max-width: 200px;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    border-radius: 3%;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .service__card h4 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--secondary-color-dark);
+  }
+
+  .service__card p {
+    color: var(--text-color);
+    margin-left: 3rem;
+    font-size: 1.4rem;
+  }
+
+  .service__card i {
+    color: var(--main-color);
+  }
+
+  .service__card .btn {
+    margin-left: 3rem;
+  }
+
+  .customisation {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("assets/customisation.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+  .customisation__container {
+    text-align: center;
+  }
+
+  .customisation__container :is(.section__header, .section__description) {
+    max-width: 750px;
+    margin: auto;
+    color: var(--white);
+  }
+
+  .section__header1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3.5rem;
+    color: var(--white);
+    margin-left: 15rem;
+    margin-bottom: 3rem;
+  }
+
+  .customisation__grid {
+    margin-top: 4rem;
+    display: flex;
+    gap: 4rem 2rem;
+  }
+
+  .btn {
+    position: relative;
+    margin-top: 2.5rem;
+    background: var(--text-color);
+    color: #fff;
+    padding: 1.5rem 3.5rem;
+    font-size: 1.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background: var(--main-color);
+    color: #fff
+  }
+
+
+  .price__container {
+    background-color: var(--extra-light);
+  }
+
+  .price__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 2rem 1rem;
+  }
+
+  .price__card {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 1rem;
+    border-top: 5px solid var(--extra-light);
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+
+  .price__card img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .price__card:hover {
+    background: #d0d6e2;
+  }
+
+
+  .price__card h4 {
+    text-align: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .price__card p {
+    margin-left: 12rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+  }
+
+  .price__card i {
+    color: var(--main-color);
+  }
+
+  .price__card .btn {
+    text-align: center;
+    justify-content: center;
+    margin-left: 10rem;
+  }
+
+
+  @media (width > 480px) {
+
+
+    .banner__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner__image {
+      grid-column: 1/3;
+    }
+
+    .service__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .customisation__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .price__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+  }
+
+  @media (width > 768px) {
+
+    .experience__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    .service__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .customisation__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .price__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+
+  }
+
+  @media (width > 1024px) {
+    .price__grid {
+      gap: 2rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .flash-message {
+    margin-top: 3rem;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* list page end */
+
+
+  .deals {
+    background-color: var(--extra-light);
+    font-size: 1.5rem;
+  }
+
+  .deals__container .section__description {
+    max-width: 600px;
+    margin-inline: auto;
+    margin-bottom: 4rem;
+  }
+
+  .deals__tabs {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .deals__tabs .btn {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color-dark);
+    background-color: var(--white);
+  }
+
+  .deals__tabs .btn.active {
+    color: var(--white);
+    background-color: var(--primary-color);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .deals__container .tab__content {
+    display: none;
+    gap: 1rem;
+    animation: fadeEffect 1s;
+  }
+
+  .deals__container .tab__content.active {
+    display: grid;
+  }
+
+  @keyframes fadeEffect {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .deals__card {
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .deals__card img {
+    margin-bottom: 1rem;
+  }
+
+  .deals__rating {
+    margin-bottom: 1rem;
+    color: goldenrod;
+  }
+
+  .deals__rating span:last-child {
+    color: var(--text-light);
+  }
+
+  .deals__card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .deals__card__grid {
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .deals__card__grid div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+  }
+
+  .deals__card__grid div span {
+    font-size: 1.2rem;
+  }
+
+  .deals__card__footer {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .deals__card__footer h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .deals__card__footer h3 span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-light);
+  }
+
+  .deals__card__footer a {
+    font-weight: 600;
+    color: var(--main-color);
+  }
+
+  .deals__card__footer a:hover {
+    color: var(--primary-color-dark);
+  }
+
+  .choose__container {
+    font-size: 1.5rem;
+    display: grid;
+  }
+
+  .choose__content {
+    padding-block: 2rem 5rem;
+    padding-inline: 1rem;
+  }
+
+  .choose__grid {
+    margin-top: 3rem;
+    display: grid;
+    gap: 2rem 1rem;
+  }
+
+  .choose__card {
+
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .choose__card span {
+
+    padding: 5px 7px;
+    font-size: 1.5rem;
+    background-color: var(--extra-light);
+    color: var(--main-color);
+    border-radius: 0.5rem;
+  }
+
+  .choose__card h4 {
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .choose__card p {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    line-height: 1.5rem;
+  }
+
+  .subscribe__container {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    overflow: hidden;
+    background-color: var(--extra-light);
+  }
+
+  .subscribe__container::before,
+  .subscribe__container::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3rem;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    z-index: -1;
+  }
+
+  .subscribe__container::after {
+    top: unset;
+    bottom: 0;
+  }
+
+  .subscribe__content {
+    margin-top: 90px;
+    font-size: 1.8rem;
+    padding-block: 2rem 8rem;
+    padding-inline: 1rem;
+  }
+
+
+
+  .subscribe__content input {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-dark);
+    padding-inline: 1rem;
+    background-color: transparent;
+  }
+
+
+  .client__container {
+    padding-bottom: 1rem;
+  }
+
+  .client__container .section__description {
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  .swiper {
+    display: flex;
+    padding-block: 4rem;
+    width: 100%;
+  }
+
+  .swiper-slide {
+    min-width: 375px;
+    display: flex;
+  }
+
+  .client__card {
+    width: 98%;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+  }
+
+  .client__card:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .client__details {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .client__details img {
+    max-width: 50px;
+    border-radius: 100%;
+  }
+
+  .client__details h4 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .client__rating {
+    color: rgb(206, 154, 22);
+  }
+
+  .client__card p {
+    color: var(--text-light);
+    line-height: 1.5rem;
+  }
+
+  .footer {
+    height: auto;
+    background-color: var(--primary-color-dark);
+    font-size: 1.4rem;
+  }
+
+  .footer__container {
+    display: grid;
+    gap: 4rem 2rem;
+  }
+
+  .footer__logo {
+    margin-bottom: 2rem;
+  }
+
+  .footer__logo img {
+    max-width: 45px;
+  }
+
+  .footer__logo span {
+    font-size: 2rem;
+    color: var(--white);
+  }
+
+  .footer__col p {
+    margin-bottom: 2rem;
+    color: var(--extra-light);
+    line-height: 1.5rem;
+  }
+
+  .footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .footer__socials a {
+    padding: 6px 8px;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    background-color: var(--white);
+    border-radius: 100%;
+  }
+
+  .footer__socials a:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+  }
+
+  .footer__col h4 {
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .footer__links {
+    display: grid;
+    gap: 1rem;
+    color: #ffff;
+  }
+
+  .footer__links a {
+    color: var(--extra-light);
+  }
+
+  .footer__links a:hover {
+    color: var(--main-color);
+  }
+
+  .footer__links span {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 4px 6px;
+    border: 1px solid var(--extra-light);
+    border-radius: 100%;
+  }
+
+  .footer__links a:hover span {
+    border-color: var(--primary-color);
+  }
+
+  .footer__bar {
+    padding: 1.4rem;
+    font-size: 1.7rem;
+    color: var(--extra-light);
+    text-align: center;
+  }
+
+  @media (width > 540px) {
+    .about__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .deals__container .tab__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .choose__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (width > 768px) {
+    .header__container {
+      padding-top: 0;
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, calc(var(--max-width) / 2)) minmax(0, calc(var(--max-width) / 2)) minmax(0, 1fr);
+    }
+
+    .header__image {
+      grid-area: 1/3/2/5;
+      height: 100%;
+    }
+
+    .header__image img {
+      padding-bottom: 5rem;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: unset;
+      height: 100%;
+    }
+
+    .header__content {
+      padding-block: 2rem 10rem;
+      grid-area: 1/2/2/3;
+    }
+
+    .header__content h2 {
+      margin-inline-start: unset;
+    }
+
+    .header__content :is(h1, .section__description) {
+      text-align: left;
+    }
+
+    .header__form form {
+      padding: 1.5rem;
+      transform: translateY(-50%);
+    }
+
+    .about__container {
+      padding-top: 3rem;
+    }
+
+    .about__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .deals__container .tab__content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .choose__container {
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, calc(var(--max-width) / 2)) minmax(0, calc(var(--max-width) / 2)) minmax(0, 1fr);
+    }
+
+    .choose__image {
+      position: relative;
+      isolation: isolate;
+      grid-area: 1/1/2/3;
+      height: 100%;
+    }
+
+    .choose__image img {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: unset;
+      height: 100%;
+    }
+
+    .choose__content {
+      padding-block: 5rem;
+      grid-area: 1/3/2/4;
+    }
+
+    .choose__content :is(.section__header, .section__description) {
+      text-align: left;
+    }
+
+    .subscribe__container {
+      grid-template-columns:
+        minmax(0, 1fr) minmax(0, calc(var(--max-width) / 2)) minmax(0, calc(var(--max-width) / 2)) minmax(0, 1fr);
+    }
+
+    .subscribe__image {
+      position: relative;
+      isolation: isolate;
+      grid-area: 1/3/2/5;
+      height: 100%;
+    }
+
+    .subscribe__image img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: unset;
+      height: 100%;
+    }
+
+    .subscribe__content {
+      padding-block: 8rem;
+      grid-area: 1/2/2/3;
+    }
+
+    .subscribe__content :is(.section__header, .section__description) {
+      text-align: left;
+    }
+
+    .subscribe__content form {
+      margin-inline-start: unset;
+    }
+
+    .footer__container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* for review*/
+
+  .review-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .review-form-title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input[type="text"],
+  .form-group textarea {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .rating-stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .rating-stars input[type="radio"] {
+    display: none;
+  }
+
+  .rating-stars label {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  .rating-stars label:before {
+    content: "\2605";
+  }
+
+  .rating-stars input[type="radio"]:checked~label {
+    color: rgb(206, 154, 22);
+  }
+
+  .submit-btn {
+    background-color: var(--text-color);
+    color: #ffff;
+    width: 98%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background-color: var(--main-color);
+    color: #ffff;
+  }
+
+  #review-message {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  @media (width > 1024px) {
+    .deals__container .tab__content {
+      gap: 1.5rem;
+    }
+
+    .deals__card {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="top-header">
+    <div class="out-box">
+      <div class="inside-box">
+        <div class="col-1">
+          <span><i class='bx bxs-envelope'></i>info@gmail.com</span>
+          <span><i class='bx bxs-phone'></i>+92 312 3456789</span>
+          <span><i class='bx bxs-alarm'></i>Mon-Fri(08:00 Am - 10:00 Pm)</span>
+        </div>
+        <div class="col-2">
+          <% if(!currentUser){ %>
+            <a href="/login"><i class='bx bx-right-arrow-alt'></i>Login</a>
+            <a href="/signup"><i class='bx bxs-user'></i>Register</a>
+            <% }else { %>
+              <a href="/logout"><i class='bx bx-left-arrow-alt'></i>LogOut</a>
+              <% } %>
+                <a href="/loginAdmin" id="adminpermission"><i class='bx bxs-user'></i>Admin</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- nav bar section start -->
+  <header class="header">
+    <div class="logo">
+      <img src="/img-20250403T053513Z-001/img/logo/Screenshotnew.png" alt="">
+    </div>
+    <nav>
+      <div class="navbar">
+        <div class="navLink">
+          <li><a href="/home" class="active">HOME</a></li>
+          <li><a href="/listings" class="active">BUY USED CAR</a></li>
+          <li><a href="/listings/new" class="active">SELL USED CAR</a></li>
+          <li><a href="http://127.0.0.1:5000" class="active">PRICE PREDICTION</a></li>
+          <li><a href="/washing" class="active">WASHING</a></li>
+          <li><a href="/repairing" class="active">REPAIRING</a></li>
+
+        </div>
+
+      </div>
+
+      </div>
+      <div class="other">
+        <i class="bx bx-menu-alt-left" id="menuBar"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- --------------------------------home page-------------------------------- -->
+
+  <p class="flash-message" id="flash-message">
+    <%= success %>
+  </p>
+  <div class="home">
+    <div class="swiper myHome">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide slide-one">
+          <div class="col-1">
+            <h1>WELLCOME <br>TO<span><br>ONLINE <br> AUTOMOBILE <h1>COMMUNITY</h1></span></h1>
+           
+          </div>
+          <div class="col-2">
+            <img src="/car.png" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide slide slide-two">
+          <div class="col-1">
+            <h1>WELLCOME <br>TO<span><br>ONLINE <br> AUTOMOBILE <h1>COMMUNITY</h1></span></h1>
+
+          
+          </div>
+          <div class="col-2">
+            <img src="/car.png" alt="">
+          </div>
+        </div>
+        <div class="swiper-slide slide slide-three">
+          <div class="col-1">
+            <h1>WELLCOME <br>TO<span><br>ONLINE <br> AUTOMOBILE <h1>COMMUNITY</h1></span></h1>
+
+          </div>
+          <div class="col-2">
+            <img src="/car.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  </div>
+  </div>
+  <!-- home page end -->
+  <!-- market page------------------------ -->
+  <section class="market">
+
+    <div class="col-3">
+      <img src="/img-20250403T053513Z-001/img/market/01.png" alt="" class="one">
+    </div>
+
+    <div class="col-4">
+      <h3>ACURA <br><span>ILX</span></h3>
+      <p class="text">The Acura ILX is a compact executive car
+        manufactured and marketed by Honda under the Acura brand,
+        based on the ninth-generation Civic seden.</p>
+      <p class="p1"><i class="ri-steering-2-line"></i>Manual</p>
+      <p class="p1"><i class="ri-group-line"></i>5 People</p>
+      <p class="p1"><i class="ri-speed-up-line"></i>18km/l</p>
+      <p class="p1"><i class="ri-money-dollar-box-line"></i>27,300</p>
+      <form action="/homebuyer">
+        <button class="btn">Buynow</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- list page start -->
+
+
+  <section class="service" id="service">
+    <div class="section__container service__container">
+      <p class="section__description">
+        Trust us to keep your automobile running smoothly and reliably.
+      </p>
+
+      <div class="service__grid">
+        <div class="service__card">
+          <img src="/img-20250403T053513Z-001/img/type/06.png" alt="service" />
+          <h4> Suzuki Wagon</h4>
+          <p><i class="ri-steering-2-line"></i> Manual</p>
+          <p><i class="ri-group-line"></i> 4 People</p>
+          <p><i class="ri-speed-up-line"></i> 18km/l</p>
+          <p><i class="ri-money-dollar-box-line"></i> 18,00</p>
+          <form action="/homebuyer">
+            <button class="btn">Buy now</button>
+          </form>
+        </div>
+
+        <div class="service__card">
+          <img src="/img-20250403T053513Z-001/img/type/09.png" alt="service" />
+          <h4>Toyota VOXY</h4>
+          <p class="p1"><i class="ri-steering-2-line"></i> Manual</p>
+          <p class="p1"><i class="ri-group-line"></i> 4 People</p>
+          <p class="p1"><i class="ri-speed-up-line"></i> 18km/l</p>
+          <p class="p1"><i class="ri-money-dollar-box-line"></i> 1,080</p>
+          <form action="/homebuyer">
+            <button class="btn">Buy now</button>
+          </form>
+        </div>
+
+        <div class="service__card">
+          <img src="/img-20250403T053513Z-001/img/type/10.png" alt="service" />
+          <h4>jaguar XKS-S</h4>
+          <p class="p1"><i class="ri-steering-2-line"></i> Manual</p>
+          <p class="p1"><i class="ri-group-line"></i> 5 People</p>
+          <p class="p1"><i class="ri-speed-up-line"></i> 18km/l</p>
+          <p class="p1"><i class="ri-money-dollar-box-line"></i> 2,700</p>
+          <form action="/homebuyer">
+            <button class="btn">Buy now</button>
+          </form>
+        </div>
+
+        <div class="service__card">
+          <img src="/img-20250403T053513Z-001/img/type/11.png" alt="service" />
+          <h4>BMW I3</h4>
+          <p class="p1"><i class="ri-steering-2-line"></i> Manual</p>
+          <p class="p1"><i class="ri-group-line"></i> 5 People</p>
+          <p class="p1"><i class="ri-speed-up-line"></i> 18km/l</p>
+          <p class="p1"><i class="ri-money-dollar-box-line"></i> 27,300</p>
+          <form action="/homebuyer">
+            <button class="btn">Buy now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="market">
+
+    <div class="col-3">
+      <img src="/img-20250403T053513Z-001/img/quality/01 - car.png" alt="" class="one">
+    </div>
+
+    <div class="col-4">
+      <h3>Hyundai <br><span>TUCSON</span></h3>
+      <p class="text">The Hyundai TUCSON is a compact crossover SUV car
+        manufactured and marketed by Hyundai under the Hyundat brand.</p>
+      <p class="p1"><i class="ri-steering-2-line"></i>Manual</p>
+      <p class="p1"><i class="ri-group-line"></i>5 People</p>
+      <p class="p1"><i class="ri-speed-up-line"></i>18km/l</p>
+      <p class="p1"><i class="ri-money-dollar-box-line"></i>27,300</p>
+      <form action="/homebuyer">
+        <button class="btn">Buynow</button>
+      </form>
+    </div>
+  </section>
+
+
+  <section class="section__container price__container" id="price">
+    <h2 class="section__header">Best Choose For Future</h2>
+    <div class="price__grid">
+
+
+      <div class="price__card">
+        <h4>Renault Kwid</h4>
+        <img src="/img-20250403T053513Z-001/img/type/05.png" alt="">
+        <div class="paragraph">
+          <p><i class="ri-group-line"></i> 5 People</p>
+          <p><i class="ri-steering-2-line"></i> Manual</p>
+          <p><i class="ri-car-line"></i> Petrol</p>
+          <p class="p1"><i class="ri-money-dollar-box-line"></i> 6,999</p>
+        </div>
+
+        <div>
+          <form action="/homebuyer">
+            <button class="btn">Buynow</button>
+          </form>
+        </div>
+      </div>
+      <div class="price__card">
+        <h4>Land Cruser Prado</h4>
+        <img src="/img-20250403T053513Z-001/img/type/04.png" alt="">
+        <div class="paragraph">
+          <p><i class="ri-group-line"></i> 5 People</p>
+          <p><i class="ri-steering-2-line"></i> Manual</p>
+          <p><i class="ri-car-line"></i> Petrol</p>
+          <p class="p1"><i class="ri-money-dollar-box-line"></i> 62,920</p>
+        </div>
+        <form action="/homebuyer">
+          <button class="btn">Buynow</button>
+        </form>
+      </div>
+      <div class="price__card">
+        <h4>Volkswagen Amarok</h4>
+        <img src="/img-20250403T053513Z-001/img/type/08.png" alt="">
+        <div class="paragraph">
+          <p><i class="ri-group-line"></i> 5 People</p>
+          <p><i class="ri-steering-2-line"></i> Manual</p>
+          <p><i class="ri-car-line"></i> Petrol</p>
+          <p class="p1"><i class="ri-money-dollar-box-line"></i> 71,150</p>
+        </div>
+        <form action="/homebuyer">
+          <button class="btn">Buynow</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <!-- /////////////////////////////// -->
+
+
+  <section class="deals" id="deals">
+    <div class="section__container deals__container">
+      <h2 class="section__header">Most popular car deals</h2>
+      <p class="section__description">
+        Explore our top car deals, handpicked to give you the best
+        value and experience. Buy now and drive your favorite ride at an
+        incredible rate!
+      </p>
+      <div class="deals__tabs">
+        <button class="btn active" data-id="Tesla">Tesla</button>
+        <button class="btn" data-id="Mitsubishi">Mitsubishi</button>
+        <button class="btn" data-id="Mazda">Mazda</button>
+        <button class="btn" data-id="Toyota">Toyota</button>
+        <button class="btn" data-id="Honda">Honda</button>
+      </div>
+      <div id="Tesla" class="tab__content active">
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-1.png" alt="deals" />
+          <h4>Tesla Model S</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Autopilot
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 400km
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Electric
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$18,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-2.png" alt="deals" />
+
+          <h4>Tesla Model E</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Autopilot
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 400km
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Electric
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$15,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-3.png" alt="deals" />
+
+          <h4>Tesla Model Y</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Autopilot
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 400km
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Electric
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$20,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="Mitsubishi" class="tab__content">
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-4.png" alt="deals" />
+
+          <h4>Mirage</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$12,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-5.png" alt="deals" />
+
+          <h4>Xpander</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$15,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-6.png" alt="deals" />
+
+          <h4>Pajero Sports</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$18,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="Mazda" class="tab__content">
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-7.png" alt="deals" />
+
+          <h4>Mazda CX5</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$13,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-8.png" alt="deals" />
+
+          <h4>Mazda CX-30</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$20,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-9.png" alt="deals" />
+
+          <h4>Mazda CX-9</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$18,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="Toyota" class="tab__content">
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-10.png" alt="deals" />
+
+          <h4>Corolla</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$18,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-11.png" alt="deals" />
+
+          <h4>Innova</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$15,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-12.png" alt="deals" />
+
+          <h4>Fortuner</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$19,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="Honda" class="tab__content">
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-13.png" alt="deals" />
+
+          <h4>Amaze</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$10,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-14.png" alt="deals" />
+
+          <h4>Elevate</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$12,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="deals__card">
+          <img src="/img-20250403T053513Z-001/assets/deals-15.png" alt="deals" />
+
+          <h4>City</h4>
+          <div class="deals__card__grid">
+            <div>
+              <span><i class="ri-group-line"></i></span> 4 People
+            </div>
+            <div>
+              <span><i class="ri-steering-2-line"></i></span> Manual
+            </div>
+            <div>
+              <span><i class="ri-speed-up-line"></i></span> 18km/l
+            </div>
+            <div>
+              <span><i class="ri-car-line"></i></span> Diesel
+            </div>
+          </div>
+          <hr />
+          <div class="deals__card__footer">
+            <h3>$15,000</h3>
+            <a href="/homebuyer">
+              Buy Now
+              <span><i class="ri-arrow-right-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="choose__container" id="choose">
+    <div class="choose__image">
+      <img src="/img-20250403T053513Z-001/assets/choose.png" alt="choose" />
+    </div>
+    <div class="choose__content">
+      <h2 class="section__header">Why choose us</h2>
+      <p class="section__description">
+        Discover the difference with our car service. We offer reliable
+        vehicles, exceptional customer service, and competitive pricing to
+        ensure a seamless experience.
+      </p>
+      <div class="choose__grid">
+        <div class="choose__card">
+          <span><i class="ri-customer-service-line"></i></span>
+          <div>
+            <h4>Customer Support</h4>
+            <p>Our dedicated support team is available to assist you.</p>
+          </div>
+        </div>
+        <div class="choose__card">
+          <span><i class="ri-map-pin-line"></i></span>
+          <div>
+            <h4>Many Locations</h4>
+            <p>
+              Services are available at many places.
+            </p>
+          </div>
+        </div>
+        <div class="choose__card">
+          <span><i class="ri-wallet-line"></i></span>
+          <div>
+            <h4>Best Price</h4>
+            <p>Enjoy competitive rates and great value for every cars.</p>
+          </div>
+        </div>
+        <div class="choose__card">
+          <span><i class="ri-user-star-line"></i></span>
+          <div>
+            <h4>Experience service</h4>
+            <p>Reliable, professional service provider available upon request.</p>
+          </div>
+        </div>
+        <div class="choose__card">
+          <span><i class="ri-verified-badge-line"></i></span>
+          <div>
+            <h4>Verified Brands</h4>
+            <p>Choose from trusted and well-maintained car brands.</p>
+          </div>
+        </div>
+        <div class="choose__card">
+          <span><i class="ri-calendar-close-line"></i></span>
+          <div>
+            <h4>Free Cancellations</h4>
+            <p>Flexible bookings with free cancellation options.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="subscribe__container">
+    <div class="subscribe__image">
+      <img src="/img-20250403T053513Z-001/assets/subscribe.png" alt="subscribe" />
+    </div>
+    <div class="subscribe__content">
+      <h2 class="section__header">
+        Stay connect for the latest car updates
+      </h2>
+      <p class="section__description">
+        We're here to provide you with the best vehicles. <br>
+        Stay connected for updates, special offers, and more. <br>
+        Drive with confidence!
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section__container client__container" id="client">
+    <h2 class="section__header">What people say about us?</h2>
+    <p class="section__description">
+      Discover why our customers love renting with us! Read real reviews and
+      testimonials to see how we deliver exceptional service.
+    </p>
+
+    <div class="review-form-container">
+      <h2 class="review-form-title">Leave a Review</h2>
+      <form action="/review" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="review[name]" required>
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating:</label>
+          <div class="rating-stars">
+            <input type="radio" id="star-5" name="review[rating]" value="5">
+            <label for="star-5"></label>
+            <input type="radio" id="star-4" name="review[rating]" value="4">
+            <label for="star-4"></label>
+            <input type="radio" id="star-3" name="review[rating]" value="3">
+            <label for="star-3"></label>
+            <input type="radio" id="star-2" name="review[rating]" value="2">
+            <label for="star-2"></label>
+            <input type="radio" id="star-1" name="review[rating]" value="1">
+            <label for="star-1"></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="review">Review:</label>
+          <textarea id="review" name="review[review]" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit Review</button>
+      </form>
+      <div id="review-message">
+
+        <% for(review of reviewss){ %>
+          <div class="client__card">
+            <div class="client__details">
+              <img src="/img-20250403T053513Z-001/img/logo/pngwing.com.png" alt="client" />
+              <div>
+                <h3>
+                  <%= review.name %>
+                </h3>
+                <div class="client__rating">
+                  <% for(let i=0; i< review.rating ; i++){ %>
+                    <span><i class="ri-star-fill"></i></span>
+                    <% } %>
+                </div>
+              </div>
+            </div>
+            <p>
+              <%= review.review %>
+            </p>
+          </div>
+          <% } %>
+
+      </div>
+    </div>
+
+
+
+
+  </section>
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="#" class="logo">
+            <!-- <img src="/img-20250403T053513Z-001/img/logo/Screenshotnew.png" alt="logo" /> -->
+            <span>Online Automobile <br> Community</span>
+          </a>
+        </div>
+        <p>
+          We're here to provide you with the best vehicles.
+          Stay connected for updates, special offers, and
+          more. Drive with confidence!
+        </p>
+        <ul class="footer__socials">
+          <li>
+            <a href=""><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-linkedin-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-youtube-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Our Services</h4>
+        <ul class="footer__links">
+          <li><a href="/home" class="active">Home</a></li>
+          <li><a href="/listings" class="active">Buy Used Vehicle</a></li>
+          <li><a href="/listings/new" class="active">Sell Used Car</a></li>
+          <li><a href="" class="active">Price Pridiction</a></li>
+          <li><a href="/washing" class="active">Washing</a></li>
+          <li><a href="/repairing" class="active">Repairing</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Vehicle Model</h4>
+        <ul class="footer__links">
+          <li>Toyota Corolla</li>
+          <li>Toyota Noah</li>
+          <li>Toyota Allion</li>
+          <li>Toyota Premio</li>
+          <li>Mistubishi Pajero</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul class="footer__links">
+          <li>
+
+            <span><i class="ri-phone-fill"></i></span> 0312 3456789
+
+          </li>
+          <li>
+
+            <span><i class="ri-map-pin-fill"></i></span> Mianwali, Pakistan
+
+          </li>
+          <li>
+
+            <span><i class="ri-mail-fill"></i></span> info@gmail.com
+
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 by Online Automobile Community. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const flashMessage = document.getElementById('flash-message');
+  setTimeout(() => {
+    flashMessage.style.display = 'none';
+  }, 3000);
+</script>
+<script>
+
+  const tabs = document.querySelector(".deals__tabs");
+
+  tabs.addEventListener("click", (e) => {
+    const tabContents = document.querySelectorAll(
+      ".deals__container .tab__content"
+    );
+    Array.from(tabs.children).forEach((item) => {
+      if (item.dataset.id === e.target.dataset.id) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+    tabContents.forEach((item) => {
+      if (item.id === e.target.dataset.id) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  });
+
+</script>
+<script>
+    //admin
+
+    if (res.locals.password == res.locals.isvalidpassword) {
+      document.getElementById("adminpermission").style.display = 'block';
+    } else {
+      document.getElementById("adminpermission").style.display = 'none';
+    }
+</script>
+<script>
+  // toggle navbar
+  let menuBtn = document.querySelector('#menuBar');
+  let navBar = document.querySelector('.navLink');
+
+  menuBtn.onclick = () => {
+    navBar.classList.toggle('active');
+  }
+
+
+  // =======swiper======
+  var swiper = new Swiper(".myHome", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextE1: "swiper-button-next",
+      preve1: "swiper-button-prev",
+    },
+  });
+
+</script>

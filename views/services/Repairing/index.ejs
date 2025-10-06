@@ -1,0 +1,321 @@
+<style>
+  /* font */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "playfair Display", serif;
+  }
+
+  html {
+    font-size: 65.5%;
+  }
+
+  :root {
+    --main-color: #d30d0d;
+    --text-color: #141622;
+
+  }
+
+  .header {
+    width: 100%;
+    position: sticky;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 9.5%;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(190, 109, 190, 0.5), 0 0 10px rgba(190, 109, 190, 0.5);
+    z-index: 2;
+    transition: 0.4s ease;
+
+  }
+
+  .header .logo img {
+    margin-left: -7rem;
+    width: 150%;
+    height: 60px;
+  }
+
+  .header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  nav .navbar .navLink {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+  }
+
+  nav .navbar .navLink li a {
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
+    position: relative;
+
+  }
+
+  nav .other i {
+    font-size: 3rem;
+    color: var(--text-color);
+    cursor: pointer;
+  }
+
+  .navbar .navLink li a:hover,
+  .navbar .navLink .other i:hover {
+    color: var(--main-color);
+  }
+
+  /* responce for navbar */
+  @media(max-width:900px) {
+    .top-header {
+      display: none;
+    }
+
+    nav .navbar .navLink {
+      position: absolute;
+      display: block;
+      top: 5.3rem;
+      width: 100%;
+      left: 0px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(190, 190, 190, 0.5);
+      padding-left: 30px;
+      display: none;
+      transition: 0.5s ease-in-out;
+    }
+
+    nav .navbar .navLink.active {
+      display: block;
+    }
+
+    nav .navbar li {
+      padding: 1rem 0;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container a {
+    font-size: 15px;
+    text-decoration: dashed;
+    color: var(--text-color);
+    margin-top: 1.7rem;
+  }
+
+
+
+
+  button {
+    background-color: #040604;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: var(--main-color);
+  }
+
+  .flash-message {
+    margin-top: 1rem;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 50%;
+    height: 200px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+  }
+  .card p{
+ 
+    display: inline;
+    margin-left: 6rem;
+    text-align: center;
+   
+  }
+  .card .p1{
+    margin-left: 7.3rem; 
+  }
+
+  .corner {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  .number {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--text-color);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .status {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+  }
+
+  form input {
+    display: none;
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+
+<html>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="/img-20250403T053513Z-001/img/logo/Screenshotnew.png" alt="">
+    </div>
+    <nav>
+      <div class="navbar">
+        <div class="navLink">
+          <li><a href="/home" class="active">HOME</a></li>
+          <li><a href="/listings" class="active">BUY USED CAR</a></li>
+          <li><a href="/listings/new" class="active">SELL USED CAR</a></li>
+          <li><a href="http://127.0.0.1:5000" class="active">PRICE PREDICTION</a></li>
+          <li><a href="/washing" class="active">WASHING</a></li>
+          <li><a href="/repairing" class="active">REPAIRING</a></li>
+        </div>
+
+      </div>
+      <div class="other">
+        <i class="bx bx-menu-alt-left" id="menuBar"></i>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <a href="/repair">Enter your listing for Repairing</a>
+
+    <div id="flash-message" class="flash-message">
+      <%= success %>
+    </div>
+    <% for(listing of allListings){ %>
+      <div class="card">
+        <div class="corner"><span class="number">#1</span></div>
+        <b>Name:</b>
+        <p class="p1">
+          <%= listing.name %>
+        </p><br>
+       <b>Address:</b>
+       <p>
+          <%= listing.address %>
+        </p>
+        <br>
+        <b>Location:</b>
+        <p>
+        <%= listing.location %>
+        </p><br>
+        <b>Country:</b>
+        <p>
+         <%= listing.country %>
+        </p>
+        <% if(currentUser && currentUser._id.equals(listing.owner._id)) { %>
+          <div>
+            <a href="/repairing/<%= listing._id %>/edit">Edit your listing</a>
+          </div><br>
+          <div>
+
+            <form method="post" action="/repair/<%= listing._id %>?_method=DELETE">
+              <button>
+                Delete this listing
+              </button>
+            </form>
+          </div>
+
+
+          <% } %>
+
+            <form method="post" action="/repairing/<%= listing._id %>?_method=PUT">
+              <button class="button" id="adminpermission">Process</button>
+              <input type="text" name="listing[status]" value="Process completed">
+            </form>
+            <span class="status">
+              <%= listing.status %>
+            </span>
+      </div>
+      <% } %>
+  </div>
+</body>
+
+</html>
+<script>
+  const flashMessage = document.getElementById('flash-message');
+  setTimeout(() => {
+    flashMessage.style.display = 'none';
+  }, 6000);
+</script>
+<script>
+  // toggle navbar
+  let menuBtn = document.querySelector('#menuBar');
+  let navBar = document.querySelector('.navLink');
+
+  menuBtn.onclick = () => {
+    navBar.classList.toggle('active');
+  };
+</script>
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach((card, index) => {
+    const button = card.querySelector('.button');
+    const status = card.querySelector('.status');
+    const number = card.querySelector('.number');
+    number.textContent = `#${index + 1}`;
+
+    button.addEventListener('click', () => {
+      status.textContent = 'Process completed';
+    });
+  });
+</script>
